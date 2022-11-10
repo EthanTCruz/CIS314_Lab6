@@ -1,0 +1,47 @@
+﻿@model ICollection<ListingDTO>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h1>Listings</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Description</th>
+            <th scope="col">Condition</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Customer</th>
+            <th scope="col">Store</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach(ListingDTO l in Model) {
+        <tr>
+            <td>
+                @l.ListingID
+            </td>
+            <td>
+                @l.Description
+            </td>
+            <td>
+                @l.Condition
+            </td>
+            <td>
+                @l.Quantity
+            </td>
+            <td>
+                @l.CustomerName
+            </td>
+            <td>
+                @l.StoreName
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@l.ListingID">Edit</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

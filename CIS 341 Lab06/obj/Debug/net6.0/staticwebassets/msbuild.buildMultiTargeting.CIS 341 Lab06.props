@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\CIS 341 Lab06.props" />
+</Project>
